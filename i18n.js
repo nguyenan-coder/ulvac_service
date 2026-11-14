@@ -15,7 +15,7 @@ window.I18N_ZH = {
 
   "hero.eyebrow": "ULVAC 越南 · 始于 2010 年",
   "hero.title": "<span>全方位真空解决方案</span><em>安装 - 维护 - 维修</em>",
-  "hero.sub": "24 小时内响应故障处理 · 维修 ULVAC 及其他品牌真空泵 · ULVAC 工程师团队驻胡志明市与海防",
+  "hero.sub": "24 小时内响应故障处理 · 维修 ULVAC 及其他品牌真空泵<br>ULVAC 工程师团队驻胡志明市与海防",
   "hero.cta": "立即联系",
   "hero.cta2": "查看服务",
   "hero.b1": "设备安装",
