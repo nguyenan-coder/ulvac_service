@@ -31,17 +31,13 @@
       <a href="#bao-gia" data-i18n="nav.quote">Yêu cầu báo giá</a>
       <a href="#lien-he" data-i18n="nav.contact">Liên hệ</a>
     </nav>
-    <label class="lang" title="Ngôn ngữ / Language">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-      <select id="langSelect" aria-label="Ngôn ngữ / Language">
-        <option value="vi">Tiếng Việt</option>
-        <option value="en">English</option>
-        <option value="zh">中文</option>
-        <option value="ko">한국어</option>
-        <option value="ja">日本語</option>
-      </select>
-    </label>
-    <a class="btn btn-primary header-cta" href="#lien-he" data-i18n="nav.cta">Liên hệ</a>
+    <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+      <button type="button" data-lang="vi" class="active" title="Tiếng Việt">VI</button>
+      <button type="button" data-lang="en" title="English">EN</button>
+      <button type="button" data-lang="zh" title="中文"><span class="full">中文</span><span class="short">中</span></button>
+      <button type="button" data-lang="ko" title="한국어"><span class="full">한국어</span><span class="short">한</span></button>
+      <button type="button" data-lang="ja" title="日本語"><span class="full">日本語</span><span class="short">日</span></button>
+    </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -54,7 +50,7 @@
   <div class="container">
     <div class="eyebrow" data-i18n="hero.eyebrow">ULVAC Việt Nam · Từ 2010</div>
     <h1 data-i18n="hero.title"><span>Giải pháp chân không toàn diện</span><em>Lắp đặt - Bảo trì - Sửa chữa</em></h1>
-    <p class="hero-sub" data-i18n="hero.sub">Xử lý sự cố trong 24h · Sửa bơm ULVAC và các hãng khác<br>Đội ngũ kỹ sư ULVAC tại TP.HCM và Hải Phòng</p>
+    <p class="hero-sub" data-i18n="hero.sub"><span class="nw">Xử lý sự cố trong 24h</span> · <span class="nw">Sửa bơm ULVAC và các hãng khác</span><br>Đội ngũ kỹ sư ULVAC tại TP.HCM và Hải Phòng</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#lien-he">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>

@@ -13,7 +13,7 @@ window.I18N_EN = {
 
   "hero.eyebrow": "ULVAC Vietnam · Since 2010",
   "hero.title": "<span>Total Vacuum Solutions</span><em>Install - Maintain - Repair</em>",
-  "hero.sub": "24-hour troubleshooting response · Repair of ULVAC and other-brand pumps<br>ULVAC engineers based in Ho Chi Minh City and Hai Phong",
+  "hero.sub": "<span class=\"nw\">24-hour troubleshooting response</span> · <span class=\"nw\">Repair of ULVAC and other-brand pumps</span><br>ULVAC engineers based in Ho Chi Minh City and Hai Phong",
   "hero.cta": "Contact us now",
   "hero.cta2": "View services",
   "hero.b1": "Equipment installation",

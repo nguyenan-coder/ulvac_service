@@ -42,7 +42,7 @@
     });
   }
 
-  var langSelect = document.getElementById("langSelect");
+  var langButtons = document.querySelectorAll(".lang button");
 
   function setLang(lang) {
     current = DICTS[lang] ? lang : "vi";
@@ -54,13 +54,17 @@
     });
     document.querySelectorAll("[data-i18n-ph]").forEach(function (el) { el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph"))); });
     document.querySelectorAll("[data-i18n-content]").forEach(function (el) { el.setAttribute("content", t(el.getAttribute("data-i18n-content"))); });
-    if (langSelect) langSelect.value = current;
+    langButtons.forEach(function (b) {
+      var on = b.dataset.lang === current;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", on);
+    });
     try { localStorage.setItem("lang", current); } catch (e) {}
   }
 
-  if (langSelect) {
-    langSelect.addEventListener("change", function () {
-      setLang(langSelect.value);
+  langButtons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      setLang(b.dataset.lang);
       // giữ ?lang= trên thanh địa chỉ khớp với ngôn ngữ đang xem, để chia sẻ link đúng bản
       try {
         var u = new URL(location.href);
@@ -68,14 +72,13 @@
         history.replaceState(null, "", u);
       } catch (e) {}
     });
-  }
+  });
 
   var initial = "vi";
   var q = new URLSearchParams(location.search).get("lang");
   if (q) initial = q;
   else { try { initial = localStorage.getItem("lang") || "vi"; } catch (e) {} }
   if (initial !== "vi") setLang(initial);
-  else if (langSelect) langSelect.value = "vi";
 
   /* ---------- Header & mobile menu ---------- */
   var header = document.querySelector(".site-header");
