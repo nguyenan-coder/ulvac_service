@@ -68,7 +68,6 @@ html:lang(zh-CN) .person h2 { white-space: normal; }
 .site-header.scrolled { background: rgba(7, 17, 31, .92); backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--line); }
 .header-inner { display: flex; align-items: center; gap: 24px; height: 80px; }
 @media (max-width: 1240px) { .header-cta { display: none; } }
-@media (max-width: 1120px) { .nav { gap: 18px; } .nav a { font-size: 14px; } }
 .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex: none; }
 .logo { gap: 16px; }
 .logo img { height: 30px; width: auto; filter: brightness(0) invert(1) drop-shadow(0 2px 10px rgba(0,0,0,.35)); }
@@ -78,9 +77,10 @@ html:lang(zh-CN) .person h2 { white-space: normal; }
 }
 @media (max-width: 640px) { .logo img { height: 24px; } }
 .nav { display: flex; gap: 26px; margin-left: auto; }
-.nav a { text-decoration: none; font-weight: 600; font-size: 15px; color: #d6e2f0; position: relative; padding: 6px 0; }
+.nav a { white-space: nowrap; text-decoration: none; font-weight: 600; font-size: 15px; color: #d6e2f0; position: relative; padding: 6px 0; }
 .nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 2px; background: var(--teal); transition: right .25s ease; }
 .nav a:hover::after { right: 0; }
+@media (max-width: 1240px) { .nav { gap: 20px; } .nav a { font-size: 14px; } }
 .lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; flex: none; }
 .lang button { background: none; border: 0; color: var(--muted); font: 700 13px/1 var(--font); padding: 9px 12px; cursor: pointer; }
 .lang button.active { background: var(--primary); color: #fff; }
@@ -266,7 +266,7 @@ section { padding: 96px 0; }
 
 /* Footer */
 .site-footer { background: #050c17; border-top: 1px solid var(--line); padding: 64px 0 28px; }
-.footer-grid { display: grid; grid-template-columns: 0.75fr 0.75fr 1.4fr 1.5fr; gap: 28px; }
+.footer-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: start; }
 .footer-grid h4 { font-size: 15px; font-weight: 800; margin: 0 0 14px; color: #fff; }
 .qr { background: #fff; border-radius: 12px; padding: 10px; width: 100%; max-width: 170px; }
 .qr-label { font-weight: 700; margin-top: 10px; font-size: 14px; }
@@ -316,9 +316,9 @@ section { padding: 96px 0; }
   .person .contact-list { grid-column: 1 / -1; }
   .cards { grid-template-columns: repeat(2, 1fr); }
   .industries { grid-template-columns: repeat(3, 1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 900px) {
+/* Menu thu gọn (nút ☰) khi màn hình không đủ chỗ cho logo + 5 mục menu */
+@media (max-width: 1100px) {
   .nav, .header-cta { display: none; }
   .menu-toggle { display: block; margin-left: auto; }
   .lang { margin-left: 0; }
@@ -327,7 +327,9 @@ section { padding: 96px 0; }
     position: absolute; top: 80px; left: 0; right: 0;
     background: rgba(7,17,31,.98); border-bottom: 1px solid var(--line); padding: 8px 20px 16px;
   }
-  .nav.open a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .nav.open a { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+}
+@media (max-width: 900px) {
   .detail, .about, .quote, .person { grid-template-columns: 1fr; gap: 32px; }
   .detail.reverse .detail-media { order: 0; }
   .detail-media { height: 360px; }
