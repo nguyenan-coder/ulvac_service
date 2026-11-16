@@ -98,7 +98,15 @@
 
   /* ---------- Reveal on scroll ---------- */
   var revealEls = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
+  // ?print=1: chế độ xuất PDF – hiện hết nội dung, tải ngay mọi ảnh
+  var printMode = new URLSearchParams(location.search).get("print") === "1";
+  if (printMode) {
+    document.documentElement.classList.add("print-mode");
+    document.querySelectorAll("img[loading=lazy], iframe[loading=lazy]").forEach(function (el) { el.loading = "eager"; });
+  }
+  if (printMode) {
+    revealEls.forEach(function (el) { el.classList.add("in"); });
+  } else if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }

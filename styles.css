@@ -337,6 +337,22 @@ section { padding: 96px 0; }
   .fab .f-call { animation: none; }
 }
 
+/* ---------- Xuất PDF (?print=1) ---------- */
+@media print {
+  @page { margin: 0; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .site-header { position: absolute; background: transparent; box-shadow: none; }
+  /* Bỏ phần liên hệ: người phụ trách, form báo giá, các nút gọi/liên hệ */
+  .fab, .modal, .menu-toggle, .lang, #lien-he, #bao-gia,
+  .hero-actions, .strip .btn, .detail-text .btn,
+  .nav a[href="#bao-gia"], .nav a[href="#lien-he"] { display: none !important; }
+  .footer-grid > div:has(.map) { display: none; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero { min-height: 1000px; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
   .person { grid-template-columns: 220px 1fr; }
