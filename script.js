@@ -10,8 +10,11 @@
   document.querySelectorAll("[data-i18n-content]").forEach(function (el) { VI[el.getAttribute("data-i18n-content")] = el.getAttribute("content"); });
   Object.assign(VI, window.I18N_VI_EXTRA || {});
 
+  var DICTS = { vi: VI, en: window.I18N_EN, zh: window.I18N_ZH, ko: window.I18N_KO, ja: window.I18N_JA };
+  var HTML_LANG = { vi: "vi", en: "en", zh: "zh-CN", ko: "ko", ja: "ja" };
+
   function t(key) {
-    var dict = current === "zh" ? window.I18N_ZH || {} : VI;
+    var dict = DICTS[current] || VI;
     return dict[key] != null ? dict[key] : VI[key];
   }
 
@@ -39,9 +42,11 @@
     });
   }
 
+  var langSelect = document.getElementById("langSelect");
+
   function setLang(lang) {
-    current = lang === "zh" ? "zh" : "vi";
-    document.documentElement.lang = current === "zh" ? "zh-CN" : "vi";
+    current = DICTS[lang] ? lang : "vi";
+    document.documentElement.lang = HTML_LANG[current];
     nodes.forEach(function (el) {
       var v = t(el.getAttribute("data-i18n"));
       if (v != null) el.innerHTML = v;
@@ -49,19 +54,28 @@
     });
     document.querySelectorAll("[data-i18n-ph]").forEach(function (el) { el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph"))); });
     document.querySelectorAll("[data-i18n-content]").forEach(function (el) { el.setAttribute("content", t(el.getAttribute("data-i18n-content"))); });
-    document.querySelectorAll(".lang button").forEach(function (b) { b.classList.toggle("active", b.dataset.lang === current); });
+    if (langSelect) langSelect.value = current;
     try { localStorage.setItem("lang", current); } catch (e) {}
   }
 
-  document.querySelectorAll(".lang button").forEach(function (b) {
-    b.addEventListener("click", function () { setLang(b.dataset.lang); });
-  });
+  if (langSelect) {
+    langSelect.addEventListener("change", function () {
+      setLang(langSelect.value);
+      // giữ ?lang= trên thanh địa chỉ khớp với ngôn ngữ đang xem, để chia sẻ link đúng bản
+      try {
+        var u = new URL(location.href);
+        if (current === "vi") u.searchParams.delete("lang"); else u.searchParams.set("lang", current);
+        history.replaceState(null, "", u);
+      } catch (e) {}
+    });
+  }
 
   var initial = "vi";
   var q = new URLSearchParams(location.search).get("lang");
   if (q) initial = q;
   else { try { initial = localStorage.getItem("lang") || "vi"; } catch (e) {} }
   if (initial !== "vi") setLang(initial);
+  else if (langSelect) langSelect.value = "vi";
 
   /* ---------- Header & mobile menu ---------- */
   var header = document.querySelector(".site-header");

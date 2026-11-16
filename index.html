@@ -31,10 +31,16 @@
       <a href="#bao-gia" data-i18n="nav.quote">Yêu cầu báo giá</a>
       <a href="#lien-he" data-i18n="nav.contact">Liên hệ</a>
     </nav>
-    <div class="lang" role="group" aria-label="Ngôn ngữ / 语言">
-      <button type="button" data-lang="vi" class="active">VI</button>
-      <button type="button" data-lang="zh">中文</button>
-    </div>
+    <label class="lang" title="Ngôn ngữ / Language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+      <select id="langSelect" aria-label="Ngôn ngữ / Language">
+        <option value="vi">Tiếng Việt</option>
+        <option value="en">English</option>
+        <option value="zh">中文</option>
+        <option value="ko">한국어</option>
+        <option value="ja">日本語</option>
+      </select>
+    </label>
     <a class="btn btn-primary header-cta" href="#lien-he" data-i18n="nav.cta">Liên hệ</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -410,6 +416,9 @@
 
 <script src="config.js"></script>
 <script src="i18n.js"></script>
+<script src="i18n-en.js"></script>
+<script src="i18n-ko.js"></script>
+<script src="i18n-ja.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
