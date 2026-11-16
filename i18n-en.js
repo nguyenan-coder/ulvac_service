@@ -103,6 +103,8 @@ window.I18N_EN = {
   "ab.title": "A leading vacuum technology group from Japan",
   "ab.p1": "Founded in Japan in 1952, ULVAC designs, manufactures and sells equipment and materials for industrial applications based on vacuum technology.",
   "ab.p2": "The ULVAC Vietnam Representative Office (part of ULVAC Singapore) has operated since 2010, with offices in Ho Chi Minh City and Hai Phong, directly supplying, installing, maintaining and overhauling equipment for customers in Vietnam.",
+  "ab.cap1": "ULVAC headquarters in Chigasaki, Japan",
+  "ab.cap2": "ULVAC with Mount Fuji",
   "ab.s1": "Founded in Japan",
   "ab.s2": "Years of vacuum expertise",
   "ab.s3": "Present in Vietnam",
