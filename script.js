@@ -59,6 +59,8 @@
       b.classList.toggle("active", on);
       b.setAttribute("aria-pressed", on);
     });
+    var intro = document.getElementById("introLink");
+    if (intro) intro.href = "intro.html" + (current === "vi" ? "" : "?lang=" + current);
     try { localStorage.setItem("lang", current); } catch (e) {}
   }
 

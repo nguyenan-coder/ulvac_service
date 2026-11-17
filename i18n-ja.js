@@ -16,6 +16,7 @@ window.I18N_JA = {
   "hero.sub": "24時間以内にトラブル対応 · ULVAC製および他社製ポンプの修理<br>ホーチミン市とハイフォンに ULVAC エンジニアが常駐",
   "hero.cta": "今すぐ問い合わせる",
   "hero.cta2": "サービスを見る",
+  "hero.cta3": "紹介を見る",
   "hero.b1": "装置の据付",
   "hero.b2": "真空ポンプ修理",
   "hero.b3": "HELIOT 900 保守",

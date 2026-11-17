@@ -18,6 +18,7 @@ window.I18N_ZH = {
   "hero.sub": "24 小时内响应故障处理 · 维修 ULVAC 及其他品牌真空泵<br>ULVAC 工程师团队驻胡志明市与海防",
   "hero.cta": "立即联系",
   "hero.cta2": "查看服务",
+  "hero.cta3": "查看介绍",
   "hero.b1": "设备安装",
   "hero.b2": "真空泵维修",
   "hero.b3": "HELIOT 900 维护",

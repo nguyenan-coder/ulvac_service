@@ -16,6 +16,7 @@ window.I18N_KO = {
   "hero.sub": "24시간 이내 고장 대응 · ULVAC 및 타사 펌프 수리<br>호찌민시·하이퐁 상주 ULVAC 엔지니어 팀",
   "hero.cta": "지금 문의하기",
   "hero.cta2": "서비스 보기",
+  "hero.cta3": "소개 보기",
   "hero.b1": "장비 설치",
   "hero.b2": "진공 펌프 수리",
   "hero.b3": "HELIOT 900 정비",

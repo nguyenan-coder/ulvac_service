@@ -16,6 +16,7 @@ window.I18N_EN = {
   "hero.sub": "<span class=\"nw\">24-hour troubleshooting response</span> · <span class=\"nw\">Repair of ULVAC and other-brand pumps</span><br>ULVAC engineers based in Ho Chi Minh City and Hai Phong",
   "hero.cta": "Contact us now",
   "hero.cta2": "View services",
+  "hero.cta3": "Watch the intro",
   "hero.b1": "Equipment installation",
   "hero.b2": "Vacuum pump repair",
   "hero.b3": "HELIOT 900 service",
